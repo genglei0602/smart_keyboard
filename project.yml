@@ -1,0 +1,45 @@
+name: SmartKeyboard
+options:
+  bundleIdPrefix: com.leogeng
+  deploymentTarget:
+    iOS: "17.0"
+settings:
+  base:
+    DEVELOPMENT_TEAM: ""
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  SmartKeyboard:
+    type: application
+    platform: iOS
+    sources:
+      - path: SmartKeyboardApp
+      - path: SmartKeyboardShared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.leogeng.smartkeyboard
+        INFOPLIST_FILE: SmartKeyboardApp/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_ENTITLEMENTS: SmartKeyboardApp/SmartKeyboard.entitlements
+    dependencies:
+      - target: SmartKeyboardKeyboard
+        embed: true
+  SmartKeyboardKeyboard:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: SmartKeyboardKeyboard
+      - path: SmartKeyboardShared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.leogeng.smartkeyboard.keyboard
+        INFOPLIST_FILE: SmartKeyboardKeyboard/Info.plist
+        APPLICATION_EXTENSION_API_ONLY: true
+        CODE_SIGN_ENTITLEMENTS: SmartKeyboardKeyboard/SmartKeyboardKeyboard.entitlements
+schemes:
+  SmartKeyboardKeyboard:
+    build:
+      targets:
+        SmartKeyboard: all
+        SmartKeyboardKeyboard: all

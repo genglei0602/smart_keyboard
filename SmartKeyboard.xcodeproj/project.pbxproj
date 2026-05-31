@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		012A915B13840256E48F3F93 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B77933A6F840A3B7C3F40F5 /* KeyboardViewController.swift */; };
+		0280CC6DC1DE538D42C73FFF /* LLMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FAC89F49A7F35CD4FC3180 /* LLMClient.swift */; };
+		221FF614ABDD4F9969D26281 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7753711DB2143B44070D5B1 /* RootView.swift */; };
+		4658397A57CF40A3C2CE6325 /* LocalCandidateGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AF3D6E24DB5C01ED8AE883 /* LocalCandidateGenerator.swift */; };
+		5073B8896726171D1A920793 /* SharedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311BF69AC5B304F0E302C38 /* SharedSettings.swift */; };
+		5EA91BFED596200916046CC0 /* SharedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311BF69AC5B304F0E302C38 /* SharedSettings.swift */; };
+		7CF7DEF5614A00736B6E7893 /* LocalCandidateGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AF3D6E24DB5C01ED8AE883 /* LocalCandidateGenerator.swift */; };
+		832D7C1DBE31A55434FE6A63 /* SmartKeyboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322E5B71D73A8F9E31D003FF /* SmartKeyboardApp.swift */; };
+		DA3D56FCF81882A55CC677C3 /* LLMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FAC89F49A7F35CD4FC3180 /* LLMClient.swift */; };
+		E5D6409F45E5944CA516A0CC /* SmartKeyboardKeyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 41B2512D4593B481A1BA463F /* SmartKeyboardKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0A59E94A2B1191704FDFFEAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F4FD8C1C5B39DA87B090487 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D72C0AB78B1A163F14065DB3;
+			remoteInfo = SmartKeyboardKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		82E5B846DDF60231C37D88B3 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E5D6409F45E5944CA516A0CC /* SmartKeyboardKeyboard.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		322E5B71D73A8F9E31D003FF /* SmartKeyboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartKeyboardApp.swift; sourceTree = "<group>"; };
+		3B77933A6F840A3B7C3F40F5 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		41B2512D4593B481A1BA463F /* SmartKeyboardKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SmartKeyboardKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C50E0B38BD44EFECEDBEE5A /* SmartKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65AF3D6E24DB5C01ED8AE883 /* LocalCandidateGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCandidateGenerator.swift; sourceTree = "<group>"; };
+		9DC524BA28616F42BDB4E939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A311BF69AC5B304F0E302C38 /* SharedSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSettings.swift; sourceTree = "<group>"; };
+		B3FAC89F49A7F35CD4FC3180 /* LLMClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMClient.swift; sourceTree = "<group>"; };
+		D21B8E1EA557315665C4D48D /* SmartKeyboardKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartKeyboardKeyboard.entitlements; sourceTree = "<group>"; };
+		DFF2F0B150C0FC59A99595D4 /* SmartKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartKeyboard.entitlements; sourceTree = "<group>"; };
+		E7753711DB2143B44070D5B1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		F673F6CB37E2C2AB11544354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1820DDA9F667158748A2E204 /* SmartKeyboardApp */ = {
+			isa = PBXGroup;
+			children = (
+				F673F6CB37E2C2AB11544354 /* Info.plist */,
+				E7753711DB2143B44070D5B1 /* RootView.swift */,
+				DFF2F0B150C0FC59A99595D4 /* SmartKeyboard.entitlements */,
+				322E5B71D73A8F9E31D003FF /* SmartKeyboardApp.swift */,
+			);
+			path = SmartKeyboardApp;
+			sourceTree = "<group>";
+		};
+		1AAE5E44A752119B6303B020 = {
+			isa = PBXGroup;
+			children = (
+				1820DDA9F667158748A2E204 /* SmartKeyboardApp */,
+				872C8F1798CED7CE61A2FFFF /* SmartKeyboardKeyboard */,
+				83728B2A67AF57CBD66A3DD5 /* SmartKeyboardShared */,
+				CF924BCD5434B68D81E5943E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83728B2A67AF57CBD66A3DD5 /* SmartKeyboardShared */ = {
+			isa = PBXGroup;
+			children = (
+				B3FAC89F49A7F35CD4FC3180 /* LLMClient.swift */,
+				65AF3D6E24DB5C01ED8AE883 /* LocalCandidateGenerator.swift */,
+				A311BF69AC5B304F0E302C38 /* SharedSettings.swift */,
+			);
+			path = SmartKeyboardShared;
+			sourceTree = "<group>";
+		};
+		872C8F1798CED7CE61A2FFFF /* SmartKeyboardKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9DC524BA28616F42BDB4E939 /* Info.plist */,
+				3B77933A6F840A3B7C3F40F5 /* KeyboardViewController.swift */,
+				D21B8E1EA557315665C4D48D /* SmartKeyboardKeyboard.entitlements */,
+			);
+			path = SmartKeyboardKeyboard;
+			sourceTree = "<group>";
+		};
+		CF924BCD5434B68D81E5943E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C50E0B38BD44EFECEDBEE5A /* SmartKeyboard.app */,
+				41B2512D4593B481A1BA463F /* SmartKeyboardKeyboard.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		604012E015D75D42037B9F6C /* SmartKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF709D61E0D4A96B23837420 /* Build configuration list for PBXNativeTarget "SmartKeyboard" */;
+			buildPhases = (
+				5639E46A802A1775D9796DF6 /* Sources */,
+				82E5B846DDF60231C37D88B3 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A9C9CFAAFE1CEF3E7980FED /* PBXTargetDependency */,
+			);
+			name = SmartKeyboard;
+			packageProductDependencies = (
+			);
+			productName = SmartKeyboard;
+			productReference = 4C50E0B38BD44EFECEDBEE5A /* SmartKeyboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D72C0AB78B1A163F14065DB3 /* SmartKeyboardKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 077CBC693F55BDE9F49459C6 /* Build configuration list for PBXNativeTarget "SmartKeyboardKeyboard" */;
+			buildPhases = (
+				036C47F7E1E44A4EB6EE150A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartKeyboardKeyboard;
+			packageProductDependencies = (
+			);
+			productName = SmartKeyboardKeyboard;
+			productReference = 41B2512D4593B481A1BA463F /* SmartKeyboardKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F4FD8C1C5B39DA87B090487 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = A6E0BFF33F477BB358FBC939 /* Build configuration list for PBXProject "SmartKeyboard" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 1AAE5E44A752119B6303B020;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CF924BCD5434B68D81E5943E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				604012E015D75D42037B9F6C /* SmartKeyboard */,
+				D72C0AB78B1A163F14065DB3 /* SmartKeyboardKeyboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		036C47F7E1E44A4EB6EE150A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				012A915B13840256E48F3F93 /* KeyboardViewController.swift in Sources */,
+				0280CC6DC1DE538D42C73FFF /* LLMClient.swift in Sources */,
+				4658397A57CF40A3C2CE6325 /* LocalCandidateGenerator.swift in Sources */,
+				5073B8896726171D1A920793 /* SharedSettings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5639E46A802A1775D9796DF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA3D56FCF81882A55CC677C3 /* LLMClient.swift in Sources */,
+				7CF7DEF5614A00736B6E7893 /* LocalCandidateGenerator.swift in Sources */,
+				221FF614ABDD4F9969D26281 /* RootView.swift in Sources */,
+				5EA91BFED596200916046CC0 /* SharedSettings.swift in Sources */,
+				832D7C1DBE31A55434FE6A63 /* SmartKeyboardApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A9C9CFAAFE1CEF3E7980FED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D72C0AB78B1A163F14065DB3 /* SmartKeyboardKeyboard */;
+			targetProxy = 0A59E94A2B1191704FDFFEAE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0E39CA35E8F5F35988094610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartKeyboardApp/SmartKeyboard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = JS5UW5ZZU7;
+				INFOPLIST_FILE = SmartKeyboardApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leogeng.smartkeyboard;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		199A3B5071E34190A08D2DFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = SmartKeyboardKeyboard/SmartKeyboardKeyboard.entitlements;
+				DEVELOPMENT_TEAM = JS5UW5ZZU7;
+				INFOPLIST_FILE = SmartKeyboardKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leogeng.smartkeyboard.keyboard;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4AC4BD7897E8AA2C928C5C58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = SmartKeyboardKeyboard/SmartKeyboardKeyboard.entitlements;
+				DEVELOPMENT_TEAM = JS5UW5ZZU7;
+				INFOPLIST_FILE = SmartKeyboardKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leogeng.smartkeyboard.keyboard;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4F0B9AA481AB2138DF078355 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartKeyboardApp/SmartKeyboard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = JS5UW5ZZU7;
+				INFOPLIST_FILE = SmartKeyboardApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leogeng.smartkeyboard;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B70FBDB040444CD44DBDFDAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C7E20DA0E74ED49C0EE71094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		077CBC693F55BDE9F49459C6 /* Build configuration list for PBXNativeTarget "SmartKeyboardKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				199A3B5071E34190A08D2DFD /* Debug */,
+				4AC4BD7897E8AA2C928C5C58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A6E0BFF33F477BB358FBC939 /* Build configuration list for PBXProject "SmartKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7E20DA0E74ED49C0EE71094 /* Debug */,
+				B70FBDB040444CD44DBDFDAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AF709D61E0D4A96B23837420 /* Build configuration list for PBXNativeTarget "SmartKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F0B9AA481AB2138DF078355 /* Debug */,
+				0E39CA35E8F5F35988094610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F4FD8C1C5B39DA87B090487 /* Project object */;
+}

@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>微信中文语气键盘 UI Mockup</title>
+  <style>
+    :root {
+      --green: #16a34a;
+      --green-soft: #e8f7ee;
+      --text: #111827;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --bg: #f3f4f6;
+      --panel: #ffffff;
+      --key: #ffffff;
+      --key-alt: #d1d5db;
+      --warn: #f97316;
+      --danger: #dc2626;
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #eef2f7;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .canvas {
+      width: 1800px;
+      min-height: 1200px;
+      padding: 64px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0)),
+        #eef2f7;
+    }
+
+    .header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 42px;
+    }
+
+    .title h1 {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.1;
+      letter-spacing: 0;
+      font-weight: 760;
+    }
+
+    .title p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.45;
+    }
+
+    .legend {
+      display: flex;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .legend span {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.78);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .frame {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      font-size: 17px;
+      font-weight: 680;
+    }
+
+    .caption small {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .phone {
+      width: 390px;
+      height: 844px;
+      border: 12px solid #0f172a;
+      border-radius: 48px;
+      background: #f9fafb;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .island {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      width: 116px;
+      height: 32px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: #0f172a;
+      z-index: 10;
+    }
+
+    .status {
+      height: 52px;
+      padding: 17px 24px 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .app-content {
+      height: calc(100% - 52px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app-main {
+      flex: 1;
+      overflow: hidden;
+      padding: 34px 20px 12px;
+    }
+
+    .app-title {
+      margin: 0 0 6px;
+      font-size: 31px;
+      line-height: 1.15;
+      font-weight: 780;
+    }
+
+    .subtitle {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .row {
+      min-height: 54px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      gap: 12px;
+    }
+
+    .row:last-child {
+      border-bottom: 0;
+    }
+
+    .row strong {
+      font-size: 15px;
+      font-weight: 650;
+    }
+
+    .row span {
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .ok {
+      color: var(--green) !important;
+      font-weight: 700;
+    }
+
+    .warn {
+      color: var(--warn) !important;
+      font-weight: 700;
+    }
+
+    .button {
+      height: 46px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 720;
+      background: var(--green);
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .button.secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .chip {
+      height: 34px;
+      padding: 0 13px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      display: inline-flex;
+      align-items: center;
+      background: white;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .chip.active {
+      border-color: rgba(22, 163, 74, 0.35);
+      background: var(--green-soft);
+      color: #0f7a36;
+      font-weight: 700;
+    }
+
+    .check-row {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 10px;
+      align-items: center;
+      font-size: 15px;
+      padding: 10px 0;
+    }
+
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 7px;
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      background: white;
+      color: white;
+    }
+
+    .check.on {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .tabbar {
+      height: 76px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,0.92);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 8px 8px 12px;
+      gap: 4px;
+    }
+
+    .tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .tab .icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 8px;
+      border: 2px solid currentColor;
+      opacity: 0.75;
+    }
+
+    .tab.active {
+      color: var(--green);
+    }
+
+    .wechat {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: #ededed;
+    }
+
+    .wechat-nav {
+      height: 86px;
+      padding: 50px 16px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      background: #ededed;
+      font-size: 17px;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .chat-body {
+      flex: 1;
+      padding: 18px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .bubble {
+      max-width: 268px;
+      padding: 11px 13px;
+      border-radius: 8px;
+      font-size: 15px;
+      line-height: 1.45;
+      background: white;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+    }
+
+    .bubble.me {
+      align-self: flex-end;
+      background: #95ec69;
+    }
+
+    .input-bar {
+      height: 48px;
+      background: #f7f7f7;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 8px;
+    }
+
+    .input-pill {
+      flex: 1;
+      height: 36px;
+      background: white;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-size: 15px;
+    }
+
+    .keyboard {
+      height: 346px;
+      background: #d9dde3;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .toolbar {
+      background: #f9fafb;
+      border-bottom: 1px solid var(--line);
+      padding: 8px 8px 7px;
+    }
+
+    .recipient {
+      height: 28px;
+      padding: 0 10px;
+      display: inline-flex;
+      align-items: center;
+      color: #0f7a36;
+      background: var(--green-soft);
+      border: 1px solid rgba(22, 163, 74, 0.22);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+    }
+
+    .action {
+      height: 34px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .action.primary {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .keys {
+      flex: 1;
+      padding: 8px 6px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .key-row {
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+    }
+
+    .key {
+      height: 41px;
+      min-width: 32px;
+      flex: 1;
+      max-width: 35px;
+      border-radius: 7px;
+      background: var(--key);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 520;
+    }
+
+    .key.alt {
+      background: var(--key-alt);
+      max-width: 48px;
+    }
+
+    .key.space {
+      max-width: none;
+      flex: 1 1 158px;
+      font-size: 15px;
+    }
+
+    .key.return {
+      max-width: 70px;
+      font-size: 14px;
+    }
+
+    .candidate-panel {
+      background: #f9fafb;
+      border-bottom: 1px solid var(--line);
+      padding: 9px 10px;
+    }
+
+    .candidate-title {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+      margin-bottom: 7px;
+    }
+
+    .candidate {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 9px 10px;
+      font-size: 14px;
+      line-height: 1.38;
+      margin-bottom: 7px;
+    }
+
+    .candidate.active {
+      border-color: rgba(22, 163, 74, 0.38);
+      box-shadow: inset 3px 0 0 var(--green);
+    }
+
+    .mini-actions {
+      display: flex;
+      justify-content: space-between;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 720;
+      padding: 1px 2px 0;
+    }
+
+    .more-grid {
+      background: #f9fafb;
+      border-bottom: 1px solid var(--line);
+      padding: 9px 10px 10px;
+    }
+
+    .more-title {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .more-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7px;
+    }
+
+    .more-button {
+      height: 38px;
+      border-radius: 11px;
+      background: white;
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .privacy-note {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 13px;
+      line-height: 1.45;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <main class="canvas">
+    <header class="header">
+      <div class="title">
+        <h1>微信中文语气键盘 UI Design</h1>
+        <p>面向中文用户在微信里的润色、委婉、高情商、催一下和拒绝场景。</p>
+      </div>
+      <div class="legend">
+        <span>iPhone 14 逻辑尺寸</span>
+        <span>App + Keyboard Extension</span>
+        <span>MVP 高保真静态稿</span>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="frame">
+        <div class="caption">App 首页 <small>设置状态与试用入口</small></div>
+        <div class="phone">
+          <div class="island"></div>
+          <div class="status"><span>9:41</span><span>5G  100%</span></div>
+          <div class="app-content">
+            <div class="app-main">
+              <h2 class="app-title">会说话键盘</h2>
+              <p class="subtitle">微信里的中文表达助手。写得直，发得体。</p>
+
+              <div class="section">
+                <div class="row"><strong>API Key</strong><span class="ok">已配置</span></div>
+                <div class="row"><strong>键盘权限</strong><span class="warn">未开启</span></div>
+                <div class="row"><strong>Full Access</strong><span class="warn">未开启</span></div>
+              </div>
+
+              <div class="button">去开启键盘</div>
+              <div class="button secondary">测试一句</div>
+
+              <div class="section">
+                <div class="row"><strong>常用场景</strong><span>编辑</span></div>
+                <div class="row">
+                  <div class="chips">
+                    <div class="chip active">润色</div>
+                    <div class="chip">委婉</div>
+                    <div class="chip">拒绝</div>
+                    <div class="chip">催一下</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="privacy-note">AI 只在你点击润色、委婉等操作时处理文本，并发送到你配置的模型服务商。</div>
+            </div>
+
+            <div class="tabbar">
+              <div class="tab active"><div class="icon"></div><span>首页</span></div>
+              <div class="tab"><div class="icon"></div><span>偏好</span></div>
+              <div class="tab"><div class="icon"></div><span>动作</span></div>
+              <div class="tab"><div class="icon"></div><span>隐私</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="frame">
+        <div class="caption">偏好设置 <small>关系、风格与边界</small></div>
+        <div class="phone">
+          <div class="island"></div>
+          <div class="status"><span>9:41</span><span>5G  100%</span></div>
+          <div class="app-content">
+            <div class="app-main">
+              <h2 class="app-title">偏好</h2>
+              <p class="subtitle">让输出更像你，也更适合当前关系。</p>
+
+              <div class="section">
+                <div class="row"><strong>默认发给谁</strong></div>
+                <div class="row">
+                  <div class="chips">
+                    <div class="chip">朋友</div>
+                    <div class="chip active">同事</div>
+                    <div class="chip">老板</div>
+                    <div class="chip">客户</div>
+                    <div class="chip">对象</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="row"><strong>我的说话风格</strong></div>
+                <div class="row">
+                  <div class="chips">
+                    <div class="chip active">自然</div>
+                    <div class="chip">礼貌</div>
+                    <div class="chip">直接</div>
+                    <div class="chip">松弛</div>
+                    <div class="chip">成熟</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="row"><strong>改写程度</strong><span>明显优化</span></div>
+                <div class="row"><strong>输出长度</strong><span>默认</span></div>
+              </div>
+
+              <div class="section">
+                <div class="row"><strong>输出习惯</strong></div>
+                <div class="row" style="display:block">
+                  <div class="check-row"><div class="check on">✓</div><div>保留我的说话味道</div></div>
+                  <div class="check-row"><div class="check on">✓</div><div>不要太油</div></div>
+                  <div class="check-row"><div class="check"></div><div>不要 emoji</div></div>
+                  <div class="check-row"><div class="check"></div><div>不要太正式</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tabbar">
+              <div class="tab"><div class="icon"></div><span>首页</span></div>
+              <div class="tab active"><div class="icon"></div><span>偏好</span></div>
+              <div class="tab"><div class="icon"></div><span>动作</span></div>
+              <div class="tab"><div class="icon"></div><span>隐私</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="frame">
+        <div class="caption">微信键盘 <small>默认输入状态</small></div>
+        <div class="phone">
+          <div class="island"></div>
+          <div class="wechat">
+            <div class="wechat-nav"><span>项目沟通</span><span>···</span></div>
+            <div class="chat-body">
+              <div class="bubble">这个资料今天方便发我吗？</div>
+              <div class="bubble me">我看下，稍等</div>
+              <div class="bubble">好，我这边后面可能要用到</div>
+            </div>
+            <div class="input-bar">
+              <div>＋</div>
+              <div class="input-pill">你怎么还没发给我</div>
+              <div>😊</div>
+            </div>
+            <div class="keyboard">
+              <div class="toolbar">
+                <div class="recipient">发给：同事 ▾</div>
+                <div class="actions">
+                  <div class="action primary">润色</div>
+                  <div class="action">委婉</div>
+                  <div class="action">高情商</div>
+                  <div class="action">简短</div>
+                  <div class="action">更多</div>
+                </div>
+              </div>
+              <div class="keys">
+                <div class="key-row">
+                  <div class="key">q</div><div class="key">w</div><div class="key">e</div><div class="key">r</div><div class="key">t</div><div class="key">y</div><div class="key">u</div><div class="key">i</div><div class="key">o</div><div class="key">p</div>
+                </div>
+                <div class="key-row">
+                  <div class="key">a</div><div class="key">s</div><div class="key">d</div><div class="key">f</div><div class="key">g</div><div class="key">h</div><div class="key">j</div><div class="key">k</div><div class="key">l</div>
+                </div>
+                <div class="key-row">
+                  <div class="key alt">⇧</div><div class="key">z</div><div class="key">x</div><div class="key">c</div><div class="key">v</div><div class="key">b</div><div class="key">n</div><div class="key">m</div><div class="key alt">⌫</div>
+                </div>
+                <div class="key-row">
+                  <div class="key alt">🌐</div><div class="key alt">123</div><div class="key space">空格</div><div class="key return">回车</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="frame">
+        <div class="caption">候选结果 <small>点击即替换，失败则复制</small></div>
+        <div class="phone">
+          <div class="island"></div>
+          <div class="wechat">
+            <div class="wechat-nav"><span>项目沟通</span><span>···</span></div>
+            <div class="chat-body">
+              <div class="bubble">这个资料今天方便发我吗？</div>
+              <div class="bubble me">我看下，稍等</div>
+              <div class="bubble">好，我这边后面可能要用到</div>
+            </div>
+            <div class="input-bar">
+              <div>＋</div>
+              <div class="input-pill">你怎么还没发给我</div>
+              <div>😊</div>
+            </div>
+            <div class="keyboard">
+              <div class="candidate-panel">
+                <div class="candidate-title"><span>选择一个发出去</span><span>同事 · 催一下</span></div>
+                <div class="candidate active">我想问下这个方便什么时候发我呀？我这边好提前安排一下。</div>
+                <div class="candidate">辛苦啦，我这边可能快要用到了，方便的话麻烦你晚点发我一下。</div>
+                <div class="candidate">这个今天方便发我吗？我这边后面需要用到。</div>
+                <div class="mini-actions"><span>重新生成</span><span>复制</span></div>
+              </div>
+              <div class="keys">
+                <div class="key-row">
+                  <div class="key">q</div><div class="key">w</div><div class="key">e</div><div class="key">r</div><div class="key">t</div><div class="key">y</div><div class="key">u</div><div class="key">i</div><div class="key">o</div><div class="key">p</div>
+                </div>
+                <div class="key-row">
+                  <div class="key">a</div><div class="key">s</div><div class="key">d</div><div class="key">f</div><div class="key">g</div><div class="key">h</div><div class="key">j</div><div class="key">k</div><div class="key">l</div>
+                </div>
+                <div class="key-row">
+                  <div class="key alt">⇧</div><div class="key">z</div><div class="key">x</div><div class="key">c</div><div class="key">v</div><div class="key">b</div><div class="key">n</div><div class="key">m</div><div class="key alt">⌫</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" style="margin-top:34px; grid-template-columns: repeat(4, 1fr);">
+      <div class="frame">
+        <div class="caption">更多动作 <small>微信短句场景</small></div>
+        <div class="phone">
+          <div class="island"></div>
+          <div class="wechat">
+            <div class="wechat-nav"><span>朋友</span><span>···</span></div>
+            <div class="chat-body">
+              <div class="bubble">晚上一起吃饭？</div>
+            </div>
+            <div class="input-bar">
+              <div>＋</div>
+              <div class="input-pill">我不想去</div>
+              <div>😊</div>
+            </div>
+            <div class="keyboard">
+              <div class="more-grid">
+                <div class="more-title">更多</div>
+                <div class="more-buttons">
+                  <div class="more-button">催一下</div>
+                  <div class="more-button">拒绝</div>
+                  <div class="more-button">道歉</div>
+                  <div class="more-button">感谢</div>
+                  <div class="more-button">安慰</div>
+                  <div class="more-button">夸人</div>
+                  <div class="more-button">求帮忙</div>
+                  <div class="more-button">提意见</div>
+                  <div class="more-button">结束聊天</div>
+                </div>
+              </div>
+              <div class="keys">
+                <div class="key-row">
+                  <div class="key">q</div><div class="key">w</div><div class="key">e</div><div class="key">r</div><div class="key">t</div><div class="key">y</div><div class="key">u</div><div class="key">i</div><div class="key">o</div><div class="key">p</div>
+                </div>
+                <div class="key-row">
+                  <div class="key">a</div><div class="key">s</div><div class="key">d</div><div class="key">f</div><div class="key">g</div><div class="key">h</div><div class="key">j</div><div class="key">k</div><div class="key">l</div>
+                </div>
+                <div class="key-row">
+                  <div class="key alt">⇧</div><div class="key">z</div><div class="key">x</div><div class="key">c</div><div class="key">v</div><div class="key">b</div><div class="key">n</div><div class="key">m</div><div class="key alt">⌫</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="frame">
+        <div class="caption">关系选择 <small>影响同一句话的分寸</small></div>
+        <div class="phone">
+          <div class="island"></div>
+          <div class="wechat">
+            <div class="wechat-nav"><span>聊天</span><span>···</span></div>
+            <div class="chat-body">
+              <div class="bubble me">今天弄不完</div>
+            </div>
+            <div class="input-bar">
+              <div>＋</div>
+              <div class="input-pill">今天弄不完</div>
+              <div>😊</div>
+            </div>
+            <div class="keyboard">
+              <div class="more-grid">
+                <div class="more-title">这句话发给谁？</div>
+                <div class="section" style="margin:0; border-radius:14px">
+                  <div class="row"><strong>朋友</strong><span>自然一点</span></div>
+                  <div class="row"><strong>同事</strong><span class="ok">当前</span></div>
+                  <div class="row"><strong>老板</strong><span>更稳妥</span></div>
+                  <div class="row"><strong>客户</strong><span>更专业</span></div>
+                  <div class="row"><strong>对象</strong><span>更柔和</span></div>
+                </div>
+              </div>
+              <div class="keys">
+                <div class="key-row">
+                  <div class="key">q</div><div class="key">w</div><div class="key">e</div><div class="key">r</div><div class="key">t</div><div class="key">y</div><div class="key">u</div><div class="key">i</div><div class="key">o</div><div class="key">p</div>
+                </div>
+                <div class="key-row">
+                  <div class="key">a</div><div class="key">s</div><div class="key">d</div><div class="key">f</div><div class="key">g</div><div class="key">h</div><div class="key">j</div><div class="key">k</div><div class="key">l</div>
+                </div>
+                <div class="key-row">
+                  <div class="key alt">⇧</div><div class="key">z</div><div class="key">x</div><div class="key">c</div><div class="key">v</div><div class="key">b</div><div class="key">n</div><div class="key">m</div><div class="key alt">⌫</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="frame">
+        <div class="caption">API 设置 <small>用户自带 Key</small></div>
+        <div class="phone">
+          <div class="island"></div>
+          <div class="status"><span>9:41</span><span>5G  100%</span></div>
+          <div class="app-content">
+            <div class="app-main">
+              <h2 class="app-title">API 设置</h2>
+              <p class="subtitle">Key 保存在本机，用于调用你选择的模型服务。</p>
+
+              <div class="section">
+                <div class="row"><strong>服务商</strong><span>OpenAI Compatible ›</span></div>
+                <div class="row"><strong>Endpoint</strong><span>api.openai.com ›</span></div>
+                <div class="row"><strong>Model</strong><span>gpt-4.1-mini ›</span></div>
+                <div class="row"><strong>API Key</strong><span>sk-••••••••••••</span></div>
+              </div>
+
+              <div class="button">测试连接</div>
+              <div class="button secondary">保存</div>
+
+              <div class="privacy-note">不会默认上传到产品自有服务器。点击 AI 动作时，文本会发送到你配置的模型服务商。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="frame">
+        <div class="caption">异常状态 <small>权限、错误与敏感内容</small></div>
+        <div class="phone">
+          <div class="island"></div>
+          <div class="wechat">
+            <div class="wechat-nav"><span>客户沟通</span><span>···</span></div>
+            <div class="chat-body">
+              <div class="bubble">可以发一下验证码吗？</div>
+            </div>
+            <div class="input-bar">
+              <div>＋</div>
+              <div class="input-pill">验证码是 482913</div>
+              <div>😊</div>
+            </div>
+            <div class="keyboard">
+              <div class="candidate-panel">
+                <div class="candidate-title"><span style="color:#9a3412">可能包含敏感信息</span><span>客户 · 润色</span></div>
+                <div class="candidate active" style="box-shadow:none; border-color:#fed7aa; background:#fff7ed; color:#9a3412">点击继续后，这段内容会发送到你配置的模型服务商。</div>
+                <div class="mini-actions"><span style="color:#6b7280">取消</span><span>继续</span></div>
+              </div>
+              <div class="toolbar">
+                <div class="recipient" style="background:#fee2e2; border-color:#fecaca; color:#b91c1c">Full Access 未开启</div>
+                <div class="actions">
+                  <div class="action">润色</div>
+                  <div class="action">委婉</div>
+                  <div class="action">高情商</div>
+                  <div class="action">简短</div>
+                  <div class="action">更多</div>
+                </div>
+              </div>
+              <div class="keys">
+                <div class="key-row">
+                  <div class="key">q</div><div class="key">w</div><div class="key">e</div><div class="key">r</div><div class="key">t</div><div class="key">y</div><div class="key">u</div><div class="key">i</div><div class="key">o</div><div class="key">p</div>
+                </div>
+                <div class="key-row">
+                  <div class="key">a</div><div class="key">s</div><div class="key">d</div><div class="key">f</div><div class="key">g</div><div class="key">h</div><div class="key">j</div><div class="key">k</div><div class="key">l</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
